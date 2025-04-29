@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+*{
+    margin: 0;
+}
+
+body{
+    background: url(../images/bg.jpg) no-repeat center center fixed;
+    background-size: cover;
+    color: #FFFFFF;
+    font-family: 'Pixelify Sans', sans-serif;
+    text-align: center;
+    user-select: none;
+    cursor: url('../images/fishingnet2.png'), auto;
+    overflow-x: hidden;
+}
+
+.menu-content{
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    margin-bottom: 1em;
+    cursor: pointer;
+}
+
+#resetButton{
+    cursor: pointer;
+}
+.clicker-img{
+    width: 25px;
+}
+
+.cost-image{
+    width: 40px;
+}
+
+#container-section{
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+} 
+
+.jellyfish2{
+    width: 120px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.seaweed-container{
+    position: relative;
+}
+
+.seaweed{
+    height: 200px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.seaweed2{
+    height: 200px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}   
+
+.left{
+    width: 100%;
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 1em 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid #808a8e;
+}
+
+.fade-up{
+    animation: fade-up 1s;
+}
+
+@keyframes fade-up {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    20% {
+        opacity: 0.9;
+        transform: translateY(-5px);
+    }
+    40% {
+        opacity: 0.7;
+        transform: translateY(-13px);
+    }
+    60% {
+        opacity: 0.5;
+        transform: translateY(-25px);
+    }
+    80% {
+        opacity: 0.3;
+        transform: translateY(-42px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-65px);
+    }
+}
+
+.upgrade, .special-item{
+    width: 70%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto 10px;
+    padding-inline: 1em;
+    border: 2px solid #FFFFFF;
+    cursor: pointer;
+}
+
+.upgrade:hover .next-level-info{
+    display: flex;
+}
+
+.upgrade-info{
+    display: flex;
+    align-items: center;
+}
+
+.cost-info{
+    display: flex;
+    align-items: center;
+}
+
+.next-level-info{
+    display: none;
+}
+
+.mid-section{
+    display: flex;
+    align-items: center;
+}
+
+.vibrate {
+    animation: vibrate 0.2s ease-in-out;
+}
+
+@keyframes vibrate {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(10deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
+}
+
+#goldenShrimp{
+    display:none; 
+    position: absolute; 
+    top: 200px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    cursor: pointer;
+    animation: pulseGlow 1.5s infinite;
+    z-index: 1000;
+}
+
+@keyframes pulseGlow {
+    0% {
+        filter: drop-shadow(0 0 5px gold) drop-shadow(0 0 10px orange);
+        transform: scale(1);
+    }
+    50% {
+        filter: drop-shadow(0 0 15px gold) drop-shadow(0 0 25px orange);
+        transform: scale(1.1);
+    }
+    100% {
+        filter: drop-shadow(0 0 5px gold) drop-shadow(0 0 10px orange);
+        transform: scale(1);
+    }
+}
+
+.frenzy{
+    position:fixed; 
+    top:10px; 
+    right:10px; 
+    font-size:20px; 
+    color:gold; 
+    display:none;
+}
+
+#shrimpRainContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.shrimp-rain {
+    position: absolute;
+    width: 40px;
+    animation: fall 4s linear forwards;
+    user-select: none;
+    z-index: -1;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.toast {
+    position: fixed;
+    top: 35px;
+    left: 50%;
+    transform: translate(-50%);
+    background: #333;
+    color: #fff;
+    padding: 16px 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    font-size: 16px;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.fish {
+    position: absolute;
+    top: 320px;
+    left: -40px;
+    width: 60px;
+    animation: swim 25s linear infinite;
+    z-index: -1;
+}
+
+@keyframes swim {
+    0% {
+        transform: translateX(100vw);
+    }
+    100% {
+        transform: translateX(-20vw);
+    }
+}
+
+.octopus {
+    animation: float 3s ease-in-out infinite;
+    position: absolute;
+    right: 480px;
+}
+
+@keyframes float {
+    0%   { transform: translateY(0px); }
+    50%  { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.factory-img, .restaurant-img{
+    width: 60px;
+    height: auto;
+}
+
+.bottom-section{
+    position: relative;
+}
+
+.statistics{
+    width: 20%;;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1em;
+    border-radius: 10px 10px 0 0;
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    transform: translateX(-50%);
+}
+
+@media(max-width: 768px) {
+    #container-section{
+        flex-direction: column;
+        height: auto;
+    }
+
+    .upgrade, .special-item{
+        width: 80%;
+    }
+
+    .octopus{
+        width: 100px;
+        left: 0;
+        top: 10px;
+    }
+
+    .statistics{
+        width: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .seaweed-container{
+        height: 150px;
+    }
+
+    .seaweed, .seaweed2{
+        height: inherit;
+    }
+
+    .jellyfish2{
+        width: 80px;
+    }
+}
+
+.special-item h3 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.special-item p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.special-item button {
+    background-color: #29a0c9;
+    border: none;
+    color: white;
+    padding: 6px 16px;
+    font-family: 'Pixelify Sans', sans-serif;
+    
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.special-item button:hover {
+    background-color: #1f7fa0;
+}
+
+.special-item button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Shrimp Clicker</h1>
+            <div class="menu">
+                <div class="menu-content" id="menu-content">
+                    <p>Settings</p>
+                    <p>About</p>
+                    <p>Help</p>
+                    <button id="resetButton">Reset</button>
+                </div>
+            </div>
+        </header>
+        <section id="container-section">
+            <div class="left">
+                <h3>Shrimp: <span class="shrimp-cost">0</span></h3>
+                <div class="shrimp-img-container">
+                    <img 
+                        src="./assets/images/shrimp.png" 
+                        draggable="false" 
+                        id="shrimp"
+                        alt="shrimp"
+                        class="clicker"
+                    >
+                </div>
+                <img src="./assets/images/octopus.gif" class="octopus">
+                <img src="./assets/images/fish.gif" class="fish">
+                <div id="goldenShrimp">
+                    <img src="assets/images/shrimp_tempura.png" alt="Tempura shrimp" width="80">
+                </div>
+                <div id="frenzyDisplay" class="frenzy"></div>
+                <div id="shrimpRainContainer"></div>
+            </div>
+            <div class="right">
+                <h3>Upgrades</h3>
+                <div class="upgrade" onclick="buyUpgrade('clicker')">
+                    <div class="upgrade-info">
+                        <div class="mid-section">
+                            <img 
+                                src="./assets/images/click.png"  
+                                class="clicker-img"
+                                alt="Clicker"
+                                draggable="false"
+                            >
+                            <div class="cost-info">
+                                <p><span class="clicker-cost">10</span></p>
+                                <img 
+                                    src="./assets/images/shrimp.png" 
+                                    alt="Shrimp" 
+                                    class="cost-image"
+                                    draggable="false"
+                                >
+                            </div>
+                        </div>
+                        <div class="right-section">Level <span class="clicker-level">0</span></div>
+                        <div class="next-level-info">
+                            <p>
+                                + <span class="clicker-increase">1</span> Shrimp per click<br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="upgrade" onclick="buyUpgrade('fisherman')">
+                    <div class="upgrade-info">
+                        <div class="left-section">
+                            <img>
+                        </div>
+                        <div class="mid-section">
+                            <img 
+                                src="./assets/images/bear_fishing1.png"
+                                draggable="false"
+                            >
+                            <div class="cost-info">
+                                <p><span class="fisherman-cost">50</span></p>
+                                <img 
+                                    src="./assets/images/shrimp.png" 
+                                    alt="Shrimp" 
+                                    class="cost-image"
+                                    draggable="false"
+                                >
+                            </div>
+                        </div>
+                        <div class="right-section">Level <span class="fisherman-level">0</span></div>
+                        <div class="next-level-info">
+                            <p>
+                                + <span class="fisherman-increase">4</span> Shrimp per second<br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="upgrade" onclick="buyUpgrade('fishingboat')">
+                    <div class="upgrade-info">
+                        <div class="left-section">
+                            <img>
+                        </div>
+                        <div class="mid-section">
+                            <img 
+                                src="./assets/images/fishingboat.png"
+                                draggable="false"
+                            >
+                            <div class="cost-info">
+                                <p><span class="fishingboat-cost">80</span></p>
+                                <img 
+                                    src="./assets/images/shrimp.png" 
+                                    alt="Shrimp" 
+                                    class="cost-image"
+                                    draggable="false"
+                                >
+                            </div>
+                        </div>
+                        <div class="right-section">Level <span class="fishingboat-level">0</span></div>
+                        <div class="next-level-info">
+                            <p>
+                                + <span class="fishingboat-increase">10</span> Shrimp per second<br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="upgrade" onclick="buyUpgrade('restaurant')">
+                    <div class="upgrade-info">
+                        <div class="mid-section">
+                            <img 
+                                src="./assets/images/restaurant.png"
+                                draggable="false"
+                                alt="restaurant"
+                                class="restaurant-img"
+                            >
+                            <div class="cost-info">
+                                <p><span class="restaurant-cost">1000</span></p>
+                                <img 
+                                    src="./assets/images/shrimp.png" 
+                                    alt="Shrimp" 
+                                    class="cost-image"
+                                    draggable="false"
+                                >
+                            </div>
+                        </div>
+                        <div class="right-section">Level <span class="restaurant-level">0</span></div>
+                        <div class="next-level-info">
+                            <p>
+                                + <span class="restaurant-increase">80</span> Shrimp per second<br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="upgrade" onclick="buyUpgrade('factory')">
+                    <div class="upgrade-info">
+                        <div class="mid-section">
+                            <img 
+                                src="./assets/images/factory.png"
+                                draggable="false"
+                                alt="Factory"
+                                class="factory-img"
+                            >
+                            <div class="cost-info">
+                                <p><span class="factory-cost">2000</span></p>
+                                <img 
+                                    src="./assets/images/shrimp.png" 
+                                    alt="Shrimp" 
+                                    class="cost-image"
+                                    draggable="false"
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-section">Level <span class="factory-level">0</span></div>
+                        <div class="next-level-info">
+                            <p>
+                                + <span class="factory-increase">100</span> Shrimp per second<br>
+                            </p>
+                        </div>
+                    </div>
+                    <h3>Special Items X1</h3>
+                    <div id="special-items" class="special-items">
+                        <div class="special-item" data-id="1">
+                            <h3 class="item-name">
+                                Tempura Sacré 
+                                <img
+                                    src="./assets/images/shrimp_tempura.png" 
+                                    alt="Tempura shrimp" 
+                                    width="30"
+                                >
+                            </h3>
+                            <p class="item-description">Add <span class="instant-shrimp">300</span> shrimps</p>
+                            <p class="item-price">
+                                <span class="price-value">80</span> 
+                                <img 
+                                    src="./assets/images/shrimp.png" 
+                                    alt="Shrimp" 
+                                    class="cost-image"
+                                    draggable="false"
+                                    >
+                            </p>
+                            <button class="buy-btn">Buy</button>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="bottom-section">
+            <div class="statistics">
+                <div class="texts"></div>
+                <p>Shrimp per click: <span id="spc-text">1</span></p>
+                <p>Shrimp per seconds: <span id="sps-text">0</span></p>
+            </div>
+            <div class="seaweed-container">
+                <img 
+                    src="./assets/images/jellyfish.png"
+                    alt="Jellyfish" 
+                    class="jellyfish2"
+                    draggable="false"
+                >
+                <img 
+                    src="./assets/images/seaweed.png" 
+                    alt="Seaweed" class="seaweed"
+                    draggable="false"
+                >
+                <img 
+                    src="./assets/images/seaweed.png" 
+                    alt="Seaweed" class="seaweed2"
+                    draggable="false"
+                >
+            </div>
+        </section>
+    </main>
+    <script src="./js/index.js"></script>
+</body>
+</html>
